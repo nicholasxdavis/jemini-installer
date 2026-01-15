@@ -1,0 +1,38 @@
+{
+  "name": "jemini-installer",
+  "version": "1.0.0",
+  "description": "Jemini Portable Installer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.jemini.installer",
+    "asar": false,
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/game.ico",
+      "artifactName": "jemini-setup.exe"
+    },
+    "portable": {
+      "artifactName": "jemini-setup.exe",
+      "requestExecutionLevel": "user"
+    },
+    "files": [
+      "**/*",
+      "jemini-love/**/*",
+      "assets/**/*"
+    ]
+  },
+  "keywords": ["installer"],
+  "author": "Nicholas Xander Davis",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
